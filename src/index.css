@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Custom Ocean Palette Names */
+  --color-deep-ocean: #021526;
+  --color-navy: #03346E;
+  --color-aqua: #6EACDA;
+  --color-cyan-glow: #9CDCF5;
+
+  /* Floating and pulsing animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+  
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.05); }
+  }
+}
+
+/* Base ocean environment background styling */
+body {
+  background: radial-gradient(circle at 50% 30%, #03346E 0%, #021526 80%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism panel definitions */
+.glass-panel {
+  background: rgba(3, 52, 110, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(110, 172, 218, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(2, 21, 38, 0.4);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(3, 52, 110, 0.35);
+  border-color: rgba(156, 220, 245, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(110, 172, 218, 0.2), 
+              0 0 15px 1px rgba(156, 220, 245, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Glowing text highlight */
+.text-glow {
+  text-shadow: 0 0 10px rgba(156, 220, 245, 0.5), 0 0 20px rgba(110, 172, 218, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 21, 38, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 172, 218, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 220, 245, 0.6);
+}
+
+/* Bubble Animations */
+@keyframes rise {
+  0% {
+    bottom: -10%;
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 110%;
+    transform: translateX(50px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15) 0%, rgba(110, 172, 218, 0.05) 70%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  animation: rise 15s infinite linear;
+}
+
+/* PDF Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .glass-panel {
+    background: transparent !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    color: black !important;
+  }
+  .bubble, .no-print, button, svg.no-print {
+    display: none !important;
+  }
+  .text-white {
+    color: black !important;
+  }
+  .text-glow {
+    text-shadow: none !important;
+  }
+}
