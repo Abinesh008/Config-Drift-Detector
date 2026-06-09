@@ -1,16 +1,40 @@
-# React + Vite
+# Config Drift Detector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based tool that detects configuration drift between development and production environments, highlights security-sensitive mismatches, and generates a health score.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📁 Repository Structure
 
-## React Compiler
+| Folder | Description |
+|--------|-------------|
+| [`Project/`](./Project/) | All source code — React, Vite, CSS, config files |
+| [`Working-Model/`](./Working-Model/) | Live demo link |
+| [`Teammate-Resume/`](./Teammate-Resume/) | Resume links for all team members |
+| [`AI-Tools/`](./AI-Tools/) | AI tools and usage notes used in this project |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [https://strong-field.surge.sh/](https://strong-field.surge.sh/)
+
+---
+
+## 🛠 Tech Stack
+
+- **React** + **Vite** — Frontend
+- **JavaScript** — Drift detection logic
+- **Surge.sh** — Deployment
+
+---
+
+## 👥 Team
+
+See the [`Teammate-Resume/`](./Teammate-Resume/) folder for team member details.
+
+---
+
+## 🤖 AI Usage
+
+See the [`AI-Tools/`](./AI-Tools/) folder for notes on AI tools used during development.
