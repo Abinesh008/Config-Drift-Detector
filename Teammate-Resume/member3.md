@@ -1,1 +1,1 @@
-https://drive.google.com/drive/folders/1IqzbPBHsE0CfRfe6ZclLFVsnyp4p8hHx?usp=drive_link
+https://drive.google.com/drive/folders/1IqzbPBHsE0CfRfe6ZclLFVsnyp4p8hHx
