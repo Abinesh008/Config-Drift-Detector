@@ -1,0 +1,64 @@
+{
+  "environment": "production",
+  "version": "1.4.2",
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "timeout_ms": 10000,
+    "max_connections": 1000
+  },
+  "database": {
+    "host": "db-primary.internal",
+    "port": 5432,
+    "name": "app_prod",
+    "pool_size": 20,
+    "ssl": true,
+    "migrations_auto_run": false
+  },
+  "cache": {
+    "provider": "redis",
+    "ttl_seconds": 3600,
+    "max_size_mb": 2048
+  },
+  "logging": {
+    "level": "warn",
+    "format": "json",
+    "output": "file",
+    "include_stack_traces": false
+  },
+  "auth": {
+    "jwt_expiry_seconds": 3600,
+    "refresh_token_enabled": true,
+    "mfa_required": true,
+    "session_timeout_minutes": 30
+  },
+  "feature_flags": {
+    "new_dashboard": false,
+    "beta_api": false,
+    "dark_mode": true,
+    "analytics": true
+  },
+  "rate_limiting": {
+    "enabled": true,
+    "requests_per_minute": 100
+  },
+  "cors": {
+    "allowed_origins": ["https://app.example.com"],
+    "allow_credentials": true
+  },
+  "email": {
+    "provider": "sendgrid",
+    "smtp_host": "smtp.sendgrid.net",
+    "smtp_port": 587,
+    "from_address": "noreply@example.com"
+  },
+  "storage": {
+    "provider": "s3",
+    "base_path": "prod-uploads",
+    "max_file_size_mb": 25
+  },
+  "monitoring": {
+    "enabled": true,
+    "apm_enabled": true
+  }
+}
