@@ -1,0 +1,64 @@
+{
+  "environment": "development",
+  "version": "1.4.2",
+  "server": {
+    "host": "localhost",
+    "port": 3000,
+    "timeout_ms": 30000,
+    "max_connections": 50
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "name": "app_dev",
+    "pool_size": 5,
+    "ssl": false,
+    "migrations_auto_run": true
+  },
+  "cache": {
+    "provider": "memory",
+    "ttl_seconds": 60,
+    "max_size_mb": 128
+  },
+  "logging": {
+    "level": "debug",
+    "format": "pretty",
+    "output": "console",
+    "include_stack_traces": true
+  },
+  "auth": {
+    "jwt_expiry_seconds": 86400,
+    "refresh_token_enabled": true,
+    "mfa_required": false,
+    "session_timeout_minutes": 120
+  },
+  "feature_flags": {
+    "new_dashboard": true,
+    "beta_api": true,
+    "dark_mode": true,
+    "analytics": false
+  },
+  "rate_limiting": {
+    "enabled": false,
+    "requests_per_minute": 1000
+  },
+  "cors": {
+    "allowed_origins": ["http://localhost:3000", "http://localhost:8080"],
+    "allow_credentials": true
+  },
+  "email": {
+    "provider": "mailhog",
+    "smtp_host": "localhost",
+    "smtp_port": 1025,
+    "from_address": "dev@localhost"
+  },
+  "storage": {
+    "provider": "local",
+    "base_path": "./tmp/uploads",
+    "max_file_size_mb": 50
+  },
+  "monitoring": {
+    "enabled": false,
+    "apm_enabled": false
+  }
+}
